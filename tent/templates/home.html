@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to Home Page!</h1>
+
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }}!</p>
+        <a href="{% url 'logout' %}"><button>Logout</button></a>
+    {% else %}
+        <a href="{% url 'register' %}"><button>Register</button></a>
+        <a href="{% url 'login' %}"><button>Login</button></a>
+    {% endif %}
+</body>
+</html>
